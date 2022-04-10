@@ -1,9 +1,13 @@
 (() => {
     let bottomNav = document.querySelectorAll("#buttonHolder img"),
     holder = document.querySelector(".imageccholder"),
-    imgbutton = document.querySelector(".wheatimg"),
+    vidthumb = document.querySelectorAll("#videothumb img"),
+    player = document.querySelector(".videoplayer"),
+    advideo=document.querySelector("#advideo")
 
-    imgbutton2 = document.querySelector(".techimg");
+
+    imgbutton = document.querySelector(".wheatimg"),
+    imgbutton2 = document.querySelector(".techimg"),
     imgbutton3 = document.querySelector(".tasteimg");
 
     function wheatshow(){
@@ -19,8 +23,13 @@
     function changeBGImg(){
         holder.style.backgroundImage = `url(images/promotions_image${this.dataset.bgref}.jpg )`
     }
-    bottomNav.forEach (thumb => thumb.addEventListener("click", changeBGImg));
 
+    function changevid(){vid1.classList.toggle("show")}
+      
+
+  
+    vidthumb.forEach(vidthumb => vidthumb.addEventListener('click',changevid))
+    bottomNav.forEach (thumb => thumb.addEventListener("click", changeBGImg));
     imgbutton.addEventListener('click', wheatshow);
     imgbutton2.addEventListener('click', techshow);
     imgbutton3.addEventListener('click', tasteshow);
